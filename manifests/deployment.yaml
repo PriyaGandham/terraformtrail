@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: demo
-          image: quay.io/yourrepo/demo:latest
+          image: quay.io/ourquayrepo/demo:latest
           ports:
             - containerPort: 8080
