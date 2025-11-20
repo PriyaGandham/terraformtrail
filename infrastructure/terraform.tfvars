@@ -1,0 +1,7 @@
+location         = "centralindia"
+rg_name          = "demo-rg"
+storage_name     = "demostg12345"
+kv_name          = "demokv12345"
+appinsights_name = "demo-appi"
+ai_account_name  = "demo-aiact"
+nesgen_model_name = "demo-nesgen"

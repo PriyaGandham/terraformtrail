@@ -1,0 +1,22 @@
+name: Terraform CI
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+      - name: Terraform Init
+        working-directory: infrastructure
+        run: terraform init
+      - name: Terraform Plan
+        working-directory: infrastructure
+        run: terraform plan
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main'
+        working-directory: infrastructure
+        run: terraform apply -auto-approve
