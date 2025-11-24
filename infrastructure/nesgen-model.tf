@@ -4,4 +4,6 @@ resource "azurerm_cognitive_deployment" "nesgen" {
   model_format         = "OpenAI"
   model_name           = "gpt-4o-mini"
   scale_type           = "Standard"
+
+  dynamic_throttle_enabled = false
 }
