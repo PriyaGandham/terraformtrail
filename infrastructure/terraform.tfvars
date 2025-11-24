@@ -3,7 +3,7 @@ location            = "eastus"
 
 storage_name        = "tfstoragedev123"
 
-kv_name             = "kv-tf-dev-001"
+kv_name             = "kv-tf-devpri-001-unique123"
 
 appinsights_name    = "appi-tf-dev"
 
