@@ -1,15 +1,14 @@
 resource "azurerm_cognitive_account" "ca" {
-  name                = var.ai_account_name   # e.g., "ai-dev-001"
-  location            = var.location          # e.g., "eastus"
+  name                = var.ai_account_name          # keep your variable
+  location            = var.location
   resource_group_name = azurerm_resource_group.rg.name
-  kind                = "OpenAI"             # must be "OpenAI" for Azure OpenAI services
-  sku_name            = var.ai_sku            # must be supported SKU, usually "S0"
-  
-  # Ensure network access is allowed
-  public_network_access_enabled = true
-  local_auth_enabled            = true
+  kind                = "OpenAI"
+  sku_name            = var.ai_sku
 
-  tags = var.tags
+  # Prevent recreation if exists
+  lifecycle {
+    prevent_destroy = true
+  }
 
   depends_on = [azurerm_resource_group.rg]
 }
