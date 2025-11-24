@@ -17,16 +17,12 @@ nesgen_model_name = "nesgen-dev-01"
 ##############################################################
 
 user_rbac_assignments = {
-  priya = {
-    object_id = "USER-OBJECT-ID-1"
-    role      = "Contributor"
-  }
-  srividya = {
-    object_id = "USER-OBJECT-ID-2"
-    role      = "Reader"
-  }
-  darshan = {
-    object_id = "USER-OBJECT-ID-3"
+Gandham Priya = {
+    object_id = "e1f935d8-91ba-4a81-a325-acf553d9fb5b"
     role      = "Owner"
+  }
+  userA = {
+    object_id = "a6bb7c8b-8dda-42bd-b73e-ff691b2e4432"
+    role      = "Contributor"
   }
 }
