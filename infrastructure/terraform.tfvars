@@ -5,11 +5,11 @@ storage_name        = "tfstoragedev123"
 
 kv_name             = "kv-tf-devPpP-001"
 
-appinsights_name    = "appi-tf-dev"
+appinsights_name    = "appi-tf-devPpP"
 
-ai_account_name     = "ai-dev-001"
+ai_account_name     = "ai-devPpP-001"
 
-nesgen_model_name   = "nesgen-dev-01"
+nesgen_model_name   = "nesgen-devPpP-01"
 
 
 ##############################################################
