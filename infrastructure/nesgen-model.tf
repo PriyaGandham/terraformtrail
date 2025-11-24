@@ -1,25 +1,20 @@
-
-
 resource "azurerm_cognitive_deployment" "nesgen" {
-  name                = "nesgen-deployment"
-  cognitive_account_id = azurerm_cognitive_account.ca.id
+  name                   = "nesgen-deployment"
+  cognitive_account_id   = azurerm_cognitive_account.ca.id
   version_upgrade_option = "OnceNewDefaultVersionAvailable"
 
   model {
-    name    = "gpt-35-turbo"        # Supported model
+    name    = "gpt-4o-mini"         # choose a supported model for your region
     format  = "OpenAI"
-    version = "2023-07-01-preview"  # Supported version for Azure OpenAI
+    version = "2024-08-06"          # must match supported version
   }
 
   scale {
-    type     = "Standard"            # Required for Azure OpenAI
+    type     = "Standard"
     capacity = 1
   }
-
-  depends_on = [
-    azurerm_cognitive_account.ca
-  ]
 }
+
 
 # Notes:
 # - Check the supported models in your region: eastus
