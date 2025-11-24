@@ -8,7 +8,6 @@ kv_name             = "kv-tf-dev-001"
 appinsights_name    = "appi-tf-dev"
 
 ai_account_name     = "ai-dev-001"
-ai_sku              = "S0"
 
 nesgen_model_name   = "nesgen-dev-01"
 
