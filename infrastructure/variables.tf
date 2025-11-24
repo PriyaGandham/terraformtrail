@@ -5,7 +5,12 @@ variable "kv_name" {}
 variable "appinsights_name" {}
 variable "ai_account_name" {}
 variable "nesgen_model_name" {}
-variable "tags" { type = map(string) default = { env = "dev" } }
+variable "tags" {
+  type = map(string)
+  default = {
+    env = "dev"
+  }
+}
 
 ##############################################################
 # RBAC Variables
