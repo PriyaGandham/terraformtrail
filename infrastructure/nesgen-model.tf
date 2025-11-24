@@ -9,8 +9,7 @@ resource "azurerm_cognitive_deployment" "nesgen" {
   }
 
   scale {
-    type = "Standard"
+    type     = "Standard"
     capacity = 1
   }
 }
-
