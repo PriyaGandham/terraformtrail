@@ -17,3 +17,4 @@ spec:
           image: quay.io/ourquayrepo/demo:latest
           ports:
             - containerPort: 8080
+
