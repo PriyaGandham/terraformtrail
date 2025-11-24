@@ -1,31 +1,39 @@
-variable "location" {}
-variable "rg_name" {}
-variable "storage_name" {}
-variable "kv_name" {}
-variable "appinsights_name" {}
-variable "ai_account_name" {}
-variable "nesgen_model_name" {}
+# variables.tf
+
+# Azure Cognitive Services Account Name
+variable "ai_account_name" {
+  description = "Name of the Azure Cognitive Services account"
+  type        = string
+}
+
+# Azure region/location
+variable "location" {
+  description = "Azure region for all resources"
+  type        = string
+  default     = "eastus"
+}
+
+# Cognitive Services SKU
 variable "ai_sku" {
-  description = "SKU for the Azure Cognitive Account "
+  description = "SKU for Cognitive Services account"
   type        = string
   default     = "S0"
 }
-variable "tags" {
-  type = map(string)
-  default = {
-    env = "dev"
-  }
+
+# Key Vault name
+variable "kv_name" {
+  description = "Name of the Key Vault"
+  type        = string
 }
 
-##############################################################
-# RBAC Variables
-##############################################################
-
-variable "user_rbac_assignments" {
-  description = "List of users/groups with RBAC roles"
-  type = map(object({
-    object_id = string
-    role      = string
-  }))
+# Application Insights name
+variable "appi_name" {
+  description = "Name of the Application Insights resource"
+  type        = string
 }
 
+# RBAC users map (username => object_id)
+variable "rbac_users" {
+  description = "Map of users and their Object IDs for role assignment"
+  type        = map(string)
+}
