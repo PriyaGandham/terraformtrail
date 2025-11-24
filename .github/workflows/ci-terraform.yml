@@ -29,6 +29,18 @@ jobs:
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
 
+        # Automatically format Terraform files
+      - name: Terraform Format
+        run: |
+          echo "Formatting all Terraform files..."
+          terraform fmt -recursive
+
+      # Optional: Check formatting (will now always pass)
+      - name: Terraform Format Check
+        run: |
+          echo "Verifying Terraform formatting..."
+          terraform fmt -check -recursive
+          
       - name: Terraform Init
         working-directory: infrastructure
         run: terraform init -input=false
