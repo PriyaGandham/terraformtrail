@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/<our-username>/<our-repo>.git
+    repoURL: https://github.com/PriyaGandham/terraformtrail.git  ## update
     targetRevision: main
     path: manifests
   destination:
