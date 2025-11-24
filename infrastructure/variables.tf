@@ -1,4 +1,4 @@
-variable "location" { default = "centralindia" }
+variable "location" {}
 variable "rg_name" {}
 variable "storage_name" {}
 variable "kv_name" {}
