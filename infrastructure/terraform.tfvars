@@ -1,16 +1,17 @@
-rg_name = "rg-dev-terraform"
-location = "eastus"
+rg_name             = "rg-dev-terraform"
+location            = "eastus"
 
-storage_name = "tfstoragedev123"
+storage_name        = "tfstoragedev123"
 
-kv_name = "kv-tf-dev-001"
+kv_name             = "kv-tf-dev-001"
 
-appinsights_name = "appi-tf-dev"
+appinsights_name    = "appi-tf-dev"
 
-ai_account_name = "ai-dev-001"
-ai_sku          = "S0"
+ai_account_name     = "ai-dev-001"
+ai_sku              = "S0"
 
-nesgen_model_name = "nesgen-dev-01"
+nesgen_model_name   = "nesgen-dev-01"
+
 
 ##############################################################
 # RBAC User Assignments
