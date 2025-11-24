@@ -17,7 +17,7 @@ nesgen_model_name = "nesgen-dev-01"
 ##############################################################
 
 user_rbac_assignments = {
-Gandham Priya = {
+"Gandham Priya" = {
     object_id = "e1f935d8-91ba-4a81-a325-acf553d9fb5b"
     role      = "Owner"
   }
