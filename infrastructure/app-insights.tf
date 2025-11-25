@@ -4,7 +4,8 @@ resource "azurerm_application_insights" "appi" {
   resource_group_name = azurerm_resource_group.rg.name
   application_type    = "web"
 
+  # IMPORTANT FIX
   workspace_id = null
 
-  tags                = var.tags
+  tags = var.tags
 }
