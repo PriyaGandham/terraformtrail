@@ -11,6 +11,7 @@ ai_account_name     = "ai-devPpP-001"
 
 nesgen_model_name   = "nesgen-devPpP-01"
 
+create_cognitive_account = false
 
 ##############################################################
 # RBAC User Assignments
