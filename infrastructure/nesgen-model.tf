@@ -4,9 +4,9 @@ resource "azurerm_cognitive_deployment" "nesgen" {
   version_upgrade_option = "OnceNewDefaultVersionAvailable"
 
   model {
-    name    = "gpt-4o-mini"         # choose a supported model for your region
     format  = "OpenAI"
-    version = "2024-08-06"          # must match supported version
+    name    = "gpt-4o"             # replace with a supported model name for your account
+    version = "2024-08-06"        # keep or adjust if required
   }
 
   scale {
