@@ -15,6 +15,10 @@ variable "tags" {
   default = {
     env = "dev"
   }
+variable "create_cognitive_account" {
+  type    = bool
+  default = true   # set false if you already have it and imported
+}
 }
 
 ##############################################################
