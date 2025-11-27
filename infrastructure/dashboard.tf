@@ -1,7 +1,7 @@
 resource "azurerm_portal_dashboard" "appi_dashboard" {
   name                = "appi-${var.env}-dashboard"
-  resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
   tags                = var.tags
 
   dashboard_properties = jsonencode({
@@ -13,8 +13,8 @@ resource "azurerm_portal_dashboard" "appi_dashboard" {
             position = {
               x = 0
               y = 0
-              rowSpan = 4
-              colSpan = 4
+              rowSpan = 3
+              colSpan = 3
             }
             metadata = {
               inputs = [
@@ -23,69 +23,37 @@ resource "azurerm_portal_dashboard" "appi_dashboard" {
                   value = azurerm_application_insights.appi.id
                 }
               ]
-              type = "Extension/AppInsightsExtension/PartType/AppMapPart"
-            }
-          }
-
-          "1" = {
-            position = {
-              x = 4
-              y = 0
-              rowSpan = 4
-              colSpan  = 4
-            }
-            metadata = {
-              inputs = [
-                {
-                  name  = "ComponentId"
-                  value = azurerm_application_insights.appi.id
+              type = "Extension/HubsExtension/PartType/MonitorChartPart"
+              settings = {
+                content = {
+                  chartType = "LineChart"
+                  title     = "Server Response Time"
+                  metricQueries = [
+                    {
+                      id               = 0
+                      metricNamespace  = "microsoft.insights/components"
+                      metricName       = "requests/duration"
+                      aggregation      = "Avg"
+                    }
+                  ]
                 }
-              ]
-              type = "Extension/AppInsightsExtension/PartType/FailuresOverviewBlade"
+              }
             }
           }
-
-          "2" = {
-            position = {
-              x = 0
-              y = 4
-              rowSpan = 4
-              colSpan = 4
-            }
-            metadata = {
-              inputs = [
-                {
-                  name  = "ComponentId"
-                  value = azurerm_application_insights.appi.id
-                }
-              ]
-              type = "Extension/AppInsightsExtension/PartType/PerformanceBlade"
-            }
-          }
-
-          "3" = {
-            position = {
-              x = 4
-              y = 4
-              rowSpan = 4
-              colSpan = 4
-            }
-            metadata = {
-              inputs = [
-                {
-                  name  = "ComponentId"
-                  value = azurerm_application_insights.appi.id
-                }
-              ]
-              type = "Extension/AppInsightsExtension/PartType/UsageOverviewBlade"
-            }
-          }
-
         }
       }
     }
     metadata = {
-      model = "portal-dashboard/v1"
+      model = {
+        timeRange = {
+          value = {
+            relative = {
+              duration = 24
+              timeUnit = 1
+            }
+          }
+        }
+      }
     }
   })
 }
