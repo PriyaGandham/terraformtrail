@@ -13,15 +13,13 @@ variable "ai_sku" {
 }
 
 variable "env" {
-  description = "Environment name such as dev, preprod, prod"
+  description = "Environment name"
   type        = string
 }
 
 variable "tags" {
-  type = map(string)
-  default = {
-    env = "dev"
-  }
+  description = "Common tags"
+  type        = map(string)
 }
 
 variable "create_cognitive_account" {
