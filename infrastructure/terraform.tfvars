@@ -15,6 +15,12 @@ create_cognitive_account = false
 
 env = "dev"
 
+tags = {
+  env     = "dev"
+  project = "tf-demo"
+}
+
+
 ##############################################################
 # RBAC User Assignments
 ##############################################################
