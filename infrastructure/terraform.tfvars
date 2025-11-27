@@ -13,6 +13,8 @@ nesgen_model_name   = "nesgen-devPpP-01"
 
 create_cognitive_account = false
 
+env = "dev"
+
 ##############################################################
 # RBAC User Assignments
 ##############################################################
