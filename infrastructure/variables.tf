@@ -12,6 +12,11 @@ variable "ai_sku" {
   default     = "S0"
 }
 
+variable "env" {
+  description = "Environment name such as dev, preprod, prod"
+  type        = string
+}
+
 variable "tags" {
   type = map(string)
   default = {
